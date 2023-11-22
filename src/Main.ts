@@ -35,7 +35,7 @@ async function bumpVersion(): Promise<void> {
 
     // push changes
     if (inputs.needPushChanges && inputs.githubToken && bumpedFiles.length > 0) {
-        await commit(bumpedFiles, actionContext, "Bump versions by dotnet-bump-version.", inputs.githubToken);
+        await commit(bumpedFiles, actionContext, "Bump versions by dotnet-bump-version [skip-ci].", inputs.githubToken);
     }
 
     core.info("dotnet-bump-version action is finishing...");
